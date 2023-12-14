@@ -1,0 +1,12 @@
+extends ../layout/layout
+
+block variables
+    - var title = 'Test';
+    - var description = 'Description';
+    - var nav = [{text:'About us', link: '#'},{text:'Roadmap', link: '#'},{text:'Documents', link: '#'},{text:'F.A.Q.', link: '#', active: true},{text:'Buy NFT glasses', link: '#'},]
+    - var exchange = [{logo:'../../assets/img/currency/logo--currency-1', name: 'CHEEL', value: '8,00', currency: '$', increase: true}, {logo:'../../assets/img/currency/logo--currency-2', name: 'LEE', value: '8,00', currency: '$', increase: false}]
+
+block content
+    section
+        .container
+            h1 about

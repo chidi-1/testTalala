@@ -1,0 +1,34 @@
+mixin retinaImg(src, alt)
+    picture
+        source(type='image/webp' srcset=require(src + '.webp') + ' 1x,' + require(src + '@2x.webp') + ' 2x')
+        source(type='image/png' srcset=require(src + '.png') + ' 1x,' + require(src + '@2x.webp') + ' 2x')
+        img(src=require(src + '.png') + ' 1x,' + require(src + '@2x.png') + ' 2x' alt=alt)
+
+mixin navEl(text, link, active)
+    li(class=(active ? 'active' : ''))
+        a(href=link).fs-16= text
+
+mixin exchangeEl(logo, name, currency, course, increase)
+    li.exchange__el
+        .exchange__img
+            +retinaImg(logo, name)
+
+        .exchange__content
+            span.exchange__name= name
+            span(class=(increase ? 'increase' : 'decrease')).exchange__value= currency + course
+
+mixin socialEl(logo, link)
+    li
+        +socialLink(logo, link)
+
+mixin socialLink(logo, link)
+    a(href=link).social__link
+        svg(width=64 height=64)
+            use(xlink:href=require('../../assets/img/sprite.svg#' + logo))
+
+mixin stepsEl(number, title, text, small)
+    li.step
+        span.step__number= number
+        h3.step__title !{title}
+        if text
+            p.step__text.fs-18 !{text}

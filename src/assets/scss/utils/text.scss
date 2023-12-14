@@ -1,0 +1,120 @@
+@import "vars";
+
+h1 {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h2 {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+h1,
+h2,
+h3 {
+  display: block;
+
+  mark {
+    background: transparent;
+    color: $cian;
+  }
+}
+
+*.fs-16 {
+  font-size: 16px;
+  line-height: normal;
+}
+
+*.fs-18 {
+  font-size: 18px;
+  line-height: 33px;
+}
+
+*.fs-20 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+*.fs-26 {
+  font-size: 26px;
+  line-height: 38px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+    text-shadow: 0 0 5px currentcolor;
+  }
+}
+
+button,
+.button {
+  border-radius: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  line-height: normal;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px currentcolor;
+  }
+
+  &.button-primary {
+    padding: 28px 40px;
+    background: $violet;
+    color: $lightBackgroundPrimary;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+
+    &:hover {
+      background: darken($violet, 6.66);
+    }
+
+    &:active {
+      background: darken($violet, 13.33);
+    }
+  }
+
+  &.button-secondary {
+    padding: 12px 22px;
+    background: $darkBackgroundSecondary;
+    color: $lightBackgroundPrimary;
+    font-size: 16px;
+
+    &:hover {
+      background: lighten($darkBackgroundSecondary,  13.33);
+    }
+
+    &:active {
+      background: lighten($darkBackgroundSecondary, 26.66);
+    }
+  }
+}
+
+a.button:hover {
+  text-decoration: none;
+
+}

@@ -1,0 +1,165 @@
+.header {
+  padding: 20px 0;
+  background: linear-gradient(180deg, #140132 0%, rgba(20, 1, 50, 0.00) 197.96%);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  &__logo {
+    img {
+      width: 92px;
+      height: 57px;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+
+      li {
+        display: inline-block;
+
+        a {
+          color: $darkTextSisabled;
+        }
+
+        &.active {
+          a {
+            color: $cian;
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.exchange {
+  display: inline-flex;
+  gap: 20px;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__img {
+    display: inline-block;
+    margin-right: 6px;
+
+    picture,
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__content {
+    display: inline-block;
+  }
+
+  &__name {
+    display: block;
+    font-size: 8px;
+    line-height: normal;
+    margin-bottom: 3px;
+    color: #E5F7FF;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: $white;
+
+    &:after {
+      content: "";
+      margin-left: 2px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    &.increase:after {
+      border-width: 0 3.5px 5px 3.5px;
+      border-color: transparent transparent $cian transparent;
+    }
+
+    &.decrease:after {
+      border-width: 5px 3.5px 0 3.5px;
+      border-color: red transparent transparent transparent;
+    }
+  }
+}
+
+.language {
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  padding-right: 15px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: $darkTextSisabled transparent transparent transparent;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__current {
+    display: block;
+    color: $darkTextSisabled;
+  }
+
+  &__list {
+    position: absolute;
+    display: block;
+    right: 0;
+    left: -10px;
+    top: 17px;
+    box-shadow: 0 0 3px rgba(255,255,255,0.3);
+    background: #140132;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+
+    li {
+      a {
+        display: block;
+        padding: 10px;
+        color: $darkTextSisabled;
+      }
+    }
+  }
+
+  &:hover {
+    &:after {
+      transform: translateY(-50%) rotate(180deg) ;
+    }
+
+    .language__list {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

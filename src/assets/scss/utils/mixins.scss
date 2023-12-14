@@ -1,0 +1,17 @@
+@import "vars";
+
+@mixin placeholder {
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+  ::-webkit-input-placeholder {@content}
+}
+
+@mixin retina-background-image($file, $type, $size, $top, $left) {
+  background: url($file + '.' + $type) no-repeat $top $left;
+  background-size: $size;
+  @media #{$retina} {
+    background-image: url($file + '@2x.' + $type) no-repeat $top $left;
+    background-size: $size;
+  }
+}

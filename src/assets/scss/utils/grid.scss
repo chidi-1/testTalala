@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1394px;
+  padding: 0 20px;
+
+  &-sm {
+    max-width: 1162px;
+    padding: 0;
+  }
+}
+
+.page-wrap {
+  overflow: hidden;
+}

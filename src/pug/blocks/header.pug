@@ -1,0 +1,24 @@
+header.header
+    .container
+        .header__logo
+            img(src=require('../../assets/img/logo.svg') alt='Логотип')
+        nav.header__nav
+           ul
+               each item in nav
+                   +navEl(item.text, item.link, item.active)
+
+        .header__right
+            ul.exchange
+                each item in exchange
+                    +exchangeEl(item.logo, item.name, item.currency, item.value, item.increase)
+
+            a(href='').button.button-secondary
+                img(src=require('../../assets/img/logo--partner.svg') alt='Ceptik')
+
+            .language
+                span.language__current EN
+
+                ul.language__list
+                    li
+                        a(href='') RU
+
